@@ -251,6 +251,21 @@
         tr:hover {
             background: #f5f5f5;
         }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+
+        .table-responsive table {
+            margin: 0;
+            min-width: 600px; /* Previene que la tabla se comprima demasiado */
+        }
         
         .formula {
             background: #f8f9fa;
@@ -341,11 +356,27 @@
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 1.3rem; }
+            header { padding: 1rem; }
+            header h1 { font-size: 1.5rem; }
+            header p { font-size: 0.9rem; }
             .logo-header { width: 60px; }
-            .header-content { flex-direction: column; text-align: center; }
-            nav ul { flex-direction: column; align-items: center; }
+            .header-content { flex-direction: column; text-align: center; gap: 10px; }
+            
+            nav { padding: 0.5rem; }
+            nav ul { gap: 0.25rem; }
+            nav a { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
+
             .container { padding: 1rem; }
+            section { padding: 1.5rem 1rem; margin-bottom: 1.5rem; }
+            section h2 { font-size: 1.4rem; }
+            
+            .calculator { padding: 1rem; }
+            button { width: 100%; }
+        }
+
+        @media (max-width: 480px) {
+            header h1 { font-size: 1.3rem; }
+            nav a { width: 100%; text-align: center; border-radius: 8px; }
         }
     </style>
 
@@ -387,28 +418,30 @@
             </div>
 
             <h3>Técnicas de muestreo</h3>
-            <table>
-                <tbody><tr>
-                    <th>Técnica</th>
-                    <th>Cómo se hace</th>
-                    <th>Cuándo usarla</th>
-                </tr>
-                <tr>
-                    <td><strong>Aleatorio simple</strong></td>
-                    <td>Elegir al azar de toda la población</td>
-                    <td>Población homogénea</td>
-                </tr>
-                <tr>
-                    <td><strong>Estratificado</strong></td>
-                    <td>Dividir en grupos (estratos) y muestrear de cada uno</td>
-                    <td>Hay grupos claramente diferenciados</td>
-                </tr>
-                <tr>
-                    <td><strong>Por conglomerados</strong></td>
-                    <td>Elegir algunos grupos completos</td>
-                    <td>Población muy dispersa geográficamente</td>
-                </tr>
-            </tbody></table>
+            <div class="table-responsive">
+                <table>
+                    <tbody><tr>
+                        <th>Técnica</th>
+                        <th>Cómo se hace</th>
+                        <th>Cuándo usarla</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Aleatorio simple</strong></td>
+                        <td>Elegir al azar de toda la población</td>
+                        <td>Población homogénea</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estratificado</strong></td>
+                        <td>Dividir en grupos (estratos) y muestrear de cada uno</td>
+                        <td>Hay grupos claramente diferenciados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Por conglomerados</strong></td>
+                        <td>Elegir algunos grupos completos</td>
+                        <td>Población muy dispersa geográficamente</td>
+                    </tr>
+                </tbody></table>
+            </div>
 
             <div class="warning-box">
                 <strong>Errores comunes a evitar:</strong>
@@ -429,32 +462,34 @@
             <h2>2. Cómo diseñar una encuesta</h2>
             
             <h3>Tipos de preguntas</h3>
-            <table>
-                <tbody><tr>
-                    <th>Tipo</th>
-                    <th>Ejemplo</th>
-                    <th>Ventajas</th>
-                    <th>Inconvenientes</th>
-                </tr>
-                <tr>
-                    <td>Cerrada</td>
-                    <td>"¿Cuánto gastas? a) &lt;100€ b) 100-200€ c) &gt;200€"</td>
-                    <td>Fácil de analizar</td>
-                    <td>Limita respuestas</td>
-                </tr>
-                <tr>
-                    <td>Abierta</td>
-                    <td>"¿Qué opinas sobre...?"</td>
-                    <td>Información rica</td>
-                    <td>Difícil de cuantificar</td>
-                </tr>
-                <tr>
-                    <td>Escala Likert</td>
-                    <td>"Valora de 1 a 5..."</td>
-                    <td>Mide intensidad</td>
-                    <td>Puede ser subjetiva</td>
-                </tr>
-            </tbody></table>
+            <div class="table-responsive">
+                <table>
+                    <tbody><tr>
+                        <th>Tipo</th>
+                        <th>Ejemplo</th>
+                        <th>Ventajas</th>
+                        <th>Inconvenientes</th>
+                    </tr>
+                    <tr>
+                        <td>Cerrada</td>
+                        <td>"¿Cuánto gastas? a) &lt;100€ b) 100-200€ c) &gt;200€"</td>
+                        <td>Fácil de analizar</td>
+                        <td>Limita respuestas</td>
+                    </tr>
+                    <tr>
+                        <td>Abierta</td>
+                        <td>"¿Qué opinas sobre...?"</td>
+                        <td>Información rica</td>
+                        <td>Difícil de cuantificar</td>
+                    </tr>
+                    <tr>
+                        <td>Escala Likert</td>
+                        <td>"Valora de 1 a 5..."</td>
+                        <td>Mide intensidad</td>
+                        <td>Puede ser subjetiva</td>
+                    </tr>
+                </tbody></table>
+            </div>
 
             <div class="warning-box">
                 <strong>Preguntas MAL diseñadas:</strong>
@@ -495,43 +530,45 @@
                 Para datos cuantitativos continuos (como el gasto en euros), debes agrupar en <strong>intervalos</strong>.
             </div>
 
-            <table>
-                <tbody><tr>
-                    <th>Gasto (€)</th>
-                    <th>Marca de clase</th>
-                    <th>Frecuencia (f)</th>
-                    <th>Frec. relativa (%)</th>
-                    <th>Frec. acumulada</th>
-                </tr>
-                <tr>
-                    <td>[0-100)</td>
-                    <td>50</td>
-                    <td>5</td>
-                    <td>16.7%</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>[100-200)</td>
-                    <td>150</td>
-                    <td>12</td>
-                    <td>40.0%</td>
-                    <td>17</td>
-                </tr>
-                <tr>
-                    <td>[200-300)</td>
-                    <td>250</td>
-                    <td>10</td>
-                    <td>33.3%</td>
-                    <td>27</td>
-                </tr>
-                <tr>
-                    <td>[300-400)</td>
-                    <td>350</td>
-                    <td>3</td>
-                    <td>10.0%</td>
-                    <td>30</td>
-                </tr>
-            </tbody></table>
+            <div class="table-responsive">
+                <table>
+                    <tbody><tr>
+                        <th>Gasto (€)</th>
+                        <th>Marca de clase</th>
+                        <th>Frecuencia (f)</th>
+                        <th>Frec. relativa (%)</th>
+                        <th>Frec. acumulada</th>
+                    </tr>
+                    <tr>
+                        <td>[0-100)</td>
+                        <td>50</td>
+                        <td>5</td>
+                        <td>16.7%</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>[100-200)</td>
+                        <td>150</td>
+                        <td>12</td>
+                        <td>40.0%</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>[200-300)</td>
+                        <td>250</td>
+                        <td>10</td>
+                        <td>33.3%</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>[300-400)</td>
+                        <td>350</td>
+                        <td>3</td>
+                        <td>10.0%</td>
+                        <td>30</td>
+                    </tr>
+                </tbody></table>
+            </div>
 
             <h3>Tipos de gráficos</h3>
             <div class="tabs">
@@ -579,28 +616,30 @@
             <h2>4. Cómo calcular parámetros estadísticos</h2>
             
             <h3>Medidas de centralización</h3>
-            <table>
-                <tbody><tr>
-                    <th>Parámetro</th>
-                    <th>Fórmula</th>
-                    <th>Interpretación</th>
-                </tr>
-                <tr>
-                    <td><strong>Media (x̄)</strong></td>
-                    <td class="formula">x̄ = (Σxᵢ · fᵢ) / N</td>
-                    <td>Valor "promedio". Sensible a valores extremos.</td>
-                </tr>
-                <tr>
-                    <td><strong>Mediana (Me)</strong></td>
-                    <td>Valor central al ordenar datos</td>
-                    <td>Divide datos en dos mitades iguales. Robusta ante extremos.</td>
-                </tr>
-                <tr>
-                    <td><strong>Moda (Mo)</strong></td>
-                    <td>Valor mas frecuente</td>
-                    <td>El valor que mas se repite. Puede haber varias.</td>
-                </tr>
-            </tbody></table>
+            <div class="table-responsive">
+                <table>
+                    <tbody><tr>
+                        <th>Parámetro</th>
+                        <th>Fórmula</th>
+                        <th>Interpretación</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Media (x̄)</strong></td>
+                        <td class="formula">x̄ = (Σxᵢ · fᵢ) / N</td>
+                        <td>Valor "promedio". Sensible a valores extremos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mediana (Me)</strong></td>
+                        <td>Valor central al ordenar datos</td>
+                        <td>Divide datos en dos mitades iguales. Robusta ante extremos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Moda (Mo)</strong></td>
+                        <td>Valor mas frecuente</td>
+                        <td>El valor que mas se repite. Puede haber varias.</td>
+                    </tr>
+                </tbody></table>
+            </div>
 
             <h3>Medidas de posición</h3>
             <div class="info-box">
@@ -622,33 +661,35 @@
             </div>
 
             <h3>Medidas de dispersión</h3>
-            <table>
-                <tbody><tr>
-                    <th>Parámetro</th>
-                    <th>Fórmula</th>
-                    <th>Interpretación</th>
-                </tr>
-                <tr>
-                    <td><strong>Rango (R)</strong></td>
-                    <td class="formula">R = Máx - Mín</td>
-                    <td>Intervalo que cubren los datos. Muy sensible a extremos.</td>
-                </tr>
-                <tr>
-                    <td><strong>Varianza (s²)</strong></td>
-                    <td class="formula">s² = Σfᵢ(xᵢ-x̄)² / N</td>
-                    <td>Media de desviaciones al cuadrado. En unidades².</td>
-                </tr>
-                <tr>
-                    <td><strong>Desv. típica (s)</strong></td>
-                    <td class="formula">s = √s²</td>
-                    <td>"Dispersion típica". Misma unidad que los datos.</td>
-                </tr>
-                <tr>
-                    <td><strong>Coef. variación (CV)</strong></td>
-                    <td class="formula">CV = (s / x̄) × 100</td>
-                    <td>Porcentaje de dispersión. Permite comparar diferentes variables.</td>
-                </tr>
-            </tbody></table>
+            <div class="table-responsive">
+                <table>
+                    <tbody><tr>
+                        <th>Parámetro</th>
+                        <th>Fórmula</th>
+                        <th>Interpretación</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Rango (R)</strong></td>
+                        <td class="formula">R = Máx - Mín</td>
+                        <td>Intervalo que cubren los datos. Muy sensible a extremos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Varianza (s²)</strong></td>
+                        <td class="formula">s² = Σfᵢ(xᵢ-x̄)² / N</td>
+                        <td>Media de desviaciones al cuadrado. En unidades².</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Desv. típica (s)</strong></td>
+                        <td class="formula">s = √s²</td>
+                        <td>"Dispersion típica". Misma unidad que los datos.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Coef. variación (CV)</strong></td>
+                        <td class="formula">CV = (s / x̄) × 100</td>
+                        <td>Porcentaje de dispersión. Permite comparar diferentes variables.</td>
+                    </tr>
+                </tbody></table>
+            </div>
 
             <div class="example-box">
                 <strong>Interpretación del CV:</strong>

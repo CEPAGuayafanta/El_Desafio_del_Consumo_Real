@@ -398,12 +398,40 @@
             margin: 5px 0;
         }
 
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 15px 0;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .table-responsive table {
+            margin: 0;
+            min-width: 450px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .logo { width: 80px; }
+            .game-container { padding: 15px; }
+            .stats-bar { padding: 10px 15px; }
+            .stat-value { font-size: 1.5rem; }
+            .case-title { padding: 10px 15px; }
+            .case-title h3 { font-size: 1.2rem; }
+            .evidence-box { padding: 15px; }
+            .option-btn { padding: 12px 15px; font-size: 0.95rem; }
+        }
+
         @media (max-width: 600px) {
-            header h1 { font-size: 1.6rem; }
-            .logo { width: 70px; }
-            .stats-bar { flex-wrap: wrap; gap: 15px; }
-            .bar-chart { height: 150px; }
-            .bar { width: 35px; }
+            header h1 { font-size: 1.5rem; }
+            .logo { width: 60px; }
+            .stats-bar { flex-wrap: wrap; gap: 10px; justify-content: center; }
+            .bar-chart { height: 140px; gap: 8px; padding: 10px; }
+            .bar { width: 30px; font-size: 0.8rem; }
+            .bar-label { font-size: 0.75rem; bottom: -20px; }
+            .next-btn { width: 100%; }
         }
     </style>
     <style>
@@ -615,17 +643,19 @@
                     </div>
                     <div class="evidence-box">
                         <h4>🧮 Evidencia: Tabla de datos</h4>
-                        <table class="data-table">
-                            <tbody><tr>
-                                <th>Gasto (€)</th>
-                                <th>Número de personas</th>
-                            </tr>
-                            <tr><td>20</td><td>10</td></tr>
-                            <tr><td>30</td><td>20</td></tr>
-                            <tr><td>40</td><td>30</td></tr>
-                            <tr><td>50</td><td>25</td></tr>
-                            <tr><td>100</td><td>15</td></tr>
-                        </tbody></table>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <tbody><tr>
+                                    <th>Gasto (€)</th>
+                                    <th>Número de personas</th>
+                                </tr>
+                                <tr><td>20</td><td>10</td></tr>
+                                <tr><td>30</td><td>20</td></tr>
+                                <tr><td>40</td><td>30</td></tr>
+                                <tr><td>50</td><td>25</td></tr>
+                                <tr><td>100</td><td>15</td></tr>
+                            </tbody></table>
+                        </div>
                         <p><strong>Media calculada por el informe: 45€</strong></p>
                     </div>
                     <p><strong>¿Es correcto el cálculo de la media?</strong></p>
