@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<!-- saved from url=(0057)https://6xkh3ftzqnnzy.ok.kimi.link/kit_supervivencia.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kit de Supervivencia - CEPA Guayafanta</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --verde: #00625A;
+            --naranja: #F76D00;
+            --verde-claro: #008B80;
+            --verde-oscuro: #004a44;
+            --dark: #2C3E50;
+            --light: #ECF0F1;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7f7 0%, #e8edec 100%);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--verde) 0%, var(--verde-oscuro) 100%);
+            color: white;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-header {
+            width: 80px;
+            height: auto;
+            background: white;
+            padding: 5px;
+            border-radius: 8px;
+        }
+        
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+
+        .institucion {
+            color: var(--naranja);
+            font-weight: bold;
+        }
+        
+        nav {
+            background: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--naranja);
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        nav a {
+            color: var(--verde);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 500;
+            border: 2px solid transparent;
+        }
+        
+        nav a:hover {
+            background: var(--verde);
+            color: white;
+            border-color: var(--verde);
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid var(--verde);
+        }
+
+        section:hover {
+            border-left-color: var(--naranja);
+        }
+        
+        section h2 {
+            color: var(--verde);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--naranja);
+        }
+        
+        section h3 {
+            color: var(--verde-claro);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+        
+        .info-box {
+            background: linear-gradient(135deg, #e6f2f1 0%, #d4e9e7 100%);
+            border-left: 4px solid var(--verde);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid var(--naranja);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .example-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid #4CAF50;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .calculator {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border: 2px solid var(--verde-claro);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .calculator h4 {
+            color: var(--verde);
+            margin-bottom: 1rem;
+        }
+        
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: 500;
+            color: var(--verde-oscuro);
+        }
+        
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--verde);
+            outline: none;
+        }
+        
+        button {
+            background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: linear-gradient(135deg, var(--naranja), #e05a00);
+            transform: translateY(-2px);
+        }
+        
+        .result {
+            background: white;
+            border: 2px solid var(--verde);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            display: none;
+        }
+        
+        .result.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: var(--verde);
+            color: white;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .formula {
+            background: #f8f9fa;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+            border: 1px solid #e0e0e0;
+            color: var(--verde-oscuro);
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 0.5rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .checklist li::before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--verde);
+            font-size: 1.2rem;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .tab-btn {
+            background: #e0e0e0;
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            font-size: 0.9rem;
+        }
+        
+        .tab-btn.active {
+            background: var(--verde);
+            color: white;
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: var(--verde-claro);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        footer {
+            background: var(--verde-oscuro);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--naranja);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.3rem; }
+            .logo-header { width: 60px; }
+            .header-content { flex-direction: column; text-align: center; }
+            nav ul { flex-direction: column; align-items: center; }
+            .container { padding: 1rem; }
+        }
+    </style>
+
+
+  </head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="./Kit de Supervivencia - CEPA Guayafanta_files/logo_guayafanta.jpg" alt="CEPA Guayafanta" class="logo-header">
+            <div>
+                <h1>Kit de Supervivencia</h1>
+                <p>El Desafío del Consumo Real - <span class="institucion">CEPA Guayafanta</span></p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#muestra">La Muestra</a></li>
+            <li><a href="#encuesta">La Encuesta</a></li>
+            <li><a href="#datos">Organizar Datos</a></li>
+            <li><a href="#parámetros">Parámetros</a></li>
+            <li><a href="#calculadoras">Calculadoras</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- SECCIÓN 1: MUESTRA -->
+        <section id="muestra">
+            <h2>1. Cómo planificar una muestra representativa</h2>
+            
+            <div class="info-box">
+                <strong>Conceptos clave:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Población:</strong> Todos los elementos que queremos estudiar (ej: todas las familias de tu zona)</li>
+                    <li><strong>Muestra:</strong> Subconjunto de la población que realmente encuestamos</li>
+                    <li><strong>Representatividad:</strong> La muestra debe reflejar las características de la población</li>
+                </ul>
+            </div>
+
+            <h3>Técnicas de muestreo</h3>
+            <table>
+                <tbody><tr>
+                    <th>Técnica</th>
+                    <th>Cómo se hace</th>
+                    <th>Cuándo usarla</th>
+                </tr>
+                <tr>
+                    <td><strong>Aleatorio simple</strong></td>
+                    <td>Elegir al azar de toda la población</td>
+                    <td>Población homogénea</td>
+                </tr>
+                <tr>
+                    <td><strong>Estratificado</strong></td>
+                    <td>Dividir en grupos (estratos) y muestrear de cada uno</td>
+                    <td>Hay grupos claramente diferenciados</td>
+                </tr>
+                <tr>
+                    <td><strong>Por conglomerados</strong></td>
+                    <td>Elegir algunos grupos completos</td>
+                    <td>Población muy dispersa geográficamente</td>
+                </tr>
+            </tbody></table>
+
+            <div class="warning-box">
+                <strong>Errores comunes a evitar:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Encuestar solo a gente conocida (sesgo de conveniencia)</li>
+                    <li>Elegir solo a quienes estan disponibles en cierto horario</li>
+                    <li>No considerar todos los grupos de la población</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <strong>Ejemplo:</strong> Para estudiar el gasto en alimentación, si tu zona tiene barrios con diferentes niveles económicos, usa <strong>muestreo estratificado</strong>: divide por barrios y toma muestras proporcionales de cada uno.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ENCUESTA -->
+        <section id="encuesta">
+            <h2>2. Cómo diseñar una encuesta</h2>
+            
+            <h3>Tipos de preguntas</h3>
+            <table>
+                <tbody><tr>
+                    <th>Tipo</th>
+                    <th>Ejemplo</th>
+                    <th>Ventajas</th>
+                    <th>Inconvenientes</th>
+                </tr>
+                <tr>
+                    <td>Cerrada</td>
+                    <td>"¿Cuánto gastas? a) &lt;100€ b) 100-200€ c) &gt;200€"</td>
+                    <td>Fácil de analizar</td>
+                    <td>Limita respuestas</td>
+                </tr>
+                <tr>
+                    <td>Abierta</td>
+                    <td>"¿Qué opinas sobre...?"</td>
+                    <td>Información rica</td>
+                    <td>Difícil de cuantificar</td>
+                </tr>
+                <tr>
+                    <td>Escala Likert</td>
+                    <td>"Valora de 1 a 5..."</td>
+                    <td>Mide intensidad</td>
+                    <td>Puede ser subjetiva</td>
+                </tr>
+            </tbody></table>
+
+            <div class="warning-box">
+                <strong>Preguntas MAL diseñadas:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>"¿No crees que el gasto en comida es demasiado alto?" (Sesgada - sugiere respuesta)</li>
+                    <li>"¿Compras productos ecológicos y reciclas?" (Doble - dos preguntas en una)</li>
+                    <li>"¿Cuánto gastas?" (Sin especificar periodo: día? semana? mes?)</li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <strong>Preguntas BIEN diseñadas:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>"¿Cuál es el gasto SEMANAL de tu hogar en alimentación?"</li>
+                    <li>"¿Cuántas personas componen tu hogar?"</li>
+                    <li>"¿Con qué frecuencia compras en supermercado? (Diaria/Semanal/Quincenal/Mensual)"</li>
+                </ul>
+            </div>
+
+            <h3>Checklist para tu encuesta</h3>
+            <ul class="checklist">
+                <li>Tiene máximo 8 preguntas</li>
+                <li>Todas las preguntas son necesarias</li>
+                <li>No hay preguntas sesgadas</li>
+                <li>Especifica el periodo de tiempo</li>
+                <li>Respuestas cerradas con intervalos lógicos</li>
+                <li>Incluye una pregunta de filtro si es necesario</li>
+                <li>Has probado la encuesta con alguien antes</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 3: ORGANIZAR DATOS -->
+        <section id="datos">
+            <h2>3. Cómo organizar y representar datos</h2>
+            
+            <h3>Tabla de frecuencias</h3>
+            <div class="info-box">
+                Para datos cuantitativos continuos (como el gasto en euros), debes agrupar en <strong>intervalos</strong>.
+            </div>
+
+            <table>
+                <tbody><tr>
+                    <th>Gasto (€)</th>
+                    <th>Marca de clase</th>
+                    <th>Frecuencia (f)</th>
+                    <th>Frec. relativa (%)</th>
+                    <th>Frec. acumulada</th>
+                </tr>
+                <tr>
+                    <td>[0-100)</td>
+                    <td>50</td>
+                    <td>5</td>
+                    <td>16.7%</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>[100-200)</td>
+                    <td>150</td>
+                    <td>12</td>
+                    <td>40.0%</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>[200-300)</td>
+                    <td>250</td>
+                    <td>10</td>
+                    <td>33.3%</td>
+                    <td>27</td>
+                </tr>
+                <tr>
+                    <td>[300-400)</td>
+                    <td>350</td>
+                    <td>3</td>
+                    <td>10.0%</td>
+                    <td>30</td>
+                </tr>
+            </tbody></table>
+
+            <h3>Tipos de gráficos</h3>
+            <div class="tabs">
+                <div class="tab-btn active" onclick="showTab('histograma')">Histograma</div>
+                <div class="tab-btn" onclick="showTab('sectores')">Sectores</div>
+                <div class="tab-btn" onclick="showTab('barras')">Barras</div>
+            </div>
+
+            <div id="histograma" class="tab-content active">
+                <div class="info-box">
+                    <strong>Histograma:</strong> Para variables cuantitativas continuas. Las barras se tocan (son intervalos).
+                </div>
+                <p><strong>Cuando usarlo:</strong> Para ver la distribución de frecuencias de datos continuos (gasto, edad, tiempo...)</p>
+                <p><strong>Cómo construirlo:</strong></p>
+                <ol style="margin-left: 1.5rem;">
+                    <li>Eje X: Intervalos de la variable</li>
+                    <li>Eje Y: Frecuencia (absoluta o relativa)</li>
+                    <li>Barras adyacentes (sin espacio entre ellas)</li>
+                </ol>
+            </div>
+
+            <div id="sectores" class="tab-content">
+                <div class="info-box">
+                    <strong>Diagrama de sectores:</strong> Muestra proporciones de un total. Cada categoria es un "trozo de tarta".
+                </div>
+                <p><strong>Cuando usarlo:</strong> Para mostrar porcentajes o proporciones (hasta 5-6 categorias)</p>
+                <p><strong>Fórmula:</strong> Grados = (Frecuencia / Total) × 360°</p>
+            </div>
+
+            <div id="barras" class="tab-content">
+                <div class="info-box">
+                    <strong>Diagrama de barras:</strong> Para variables cualitativas o cuantitativas discretas.
+                </div>
+                <p><strong>Cuando usarlo:</strong> Para comparar cantidades entre categorias diferentes</p>
+                <p><strong>Diferencia con histograma:</strong> Las barras NO se tocan (representan categorias, no intervalos)</p>
+            </div>
+
+            <div class="warning-box">
+                <strong>Consejo práctico:</strong> Usa hojas de calculo (Excel o LibreOffice) para crear gráficos automáticamente. Selecciona los datos → Insertar → Gráfico.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: PARAMETROS -->
+        <section id="parámetros">
+            <h2>4. Cómo calcular parámetros estadísticos</h2>
+            
+            <h3>Medidas de centralización</h3>
+            <table>
+                <tbody><tr>
+                    <th>Parámetro</th>
+                    <th>Fórmula</th>
+                    <th>Interpretación</th>
+                </tr>
+                <tr>
+                    <td><strong>Media (x̄)</strong></td>
+                    <td class="formula">x̄ = (Σxᵢ · fᵢ) / N</td>
+                    <td>Valor "promedio". Sensible a valores extremos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Mediana (Me)</strong></td>
+                    <td>Valor central al ordenar datos</td>
+                    <td>Divide datos en dos mitades iguales. Robusta ante extremos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Moda (Mo)</strong></td>
+                    <td>Valor mas frecuente</td>
+                    <td>El valor que mas se repite. Puede haber varias.</td>
+                </tr>
+            </tbody></table>
+
+            <h3>Medidas de posición</h3>
+            <div class="info-box">
+                <strong>Cuartiles:</strong> Dividen los datos en 4 partes iguales
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>Q1 (25%):</strong> 25% de datos son menores que este valor</li>
+                    <li><strong>Q2 (50%):</strong> Es la mediana</li>
+                    <li><strong>Q3 (75%):</strong> 75% de datos son menores que este valor</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <strong>Percentiles:</strong> Dividen los datos en 100 partes
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>P50:</strong> Es la mediana</li>
+                    <li><strong>P25:</strong> Es Q1</li>
+                    <li><strong>P75:</strong> Es Q3</li>
+                </ul>
+            </div>
+
+            <h3>Medidas de dispersión</h3>
+            <table>
+                <tbody><tr>
+                    <th>Parámetro</th>
+                    <th>Fórmula</th>
+                    <th>Interpretación</th>
+                </tr>
+                <tr>
+                    <td><strong>Rango (R)</strong></td>
+                    <td class="formula">R = Máx - Mín</td>
+                    <td>Intervalo que cubren los datos. Muy sensible a extremos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Varianza (s²)</strong></td>
+                    <td class="formula">s² = Σfᵢ(xᵢ-x̄)² / N</td>
+                    <td>Media de desviaciones al cuadrado. En unidades².</td>
+                </tr>
+                <tr>
+                    <td><strong>Desv. típica (s)</strong></td>
+                    <td class="formula">s = √s²</td>
+                    <td>"Dispersion típica". Misma unidad que los datos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Coef. variación (CV)</strong></td>
+                    <td class="formula">CV = (s / x̄) × 100</td>
+                    <td>Porcentaje de dispersión. Permite comparar diferentes variables.</td>
+                </tr>
+            </tbody></table>
+
+            <div class="example-box">
+                <strong>Interpretación del CV:</strong>
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li><strong>CV &lt; 15%:</strong> Media muy representativa (datos muy homogéneos)</li>
+                    <li><strong>CV 15-30%:</strong> Media representativa</li>
+                    <li><strong>CV &gt; 30%:</strong> Media poco representativa (datos muy dispersos)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: CALCULADORAS -->
+        <section id="calculadoras">
+            <h2>5. Calculadoras interactivas</h2>
+            
+            <div class="calculator">
+                <h4>Calculadora de tamaño muestral</h4>
+                <div class="input-group">
+                    <label>Población total (N):</label>
+                    <input type="number" id="población" placeholder="Ej: 1000">
+                </div>
+                <div class="input-group">
+                    <label>Nivel de confianza (%):</label>
+                    <select id="confianza">
+                        <option value="1.96">95% (z = 1.96)</option>
+                        <option value="2.58">99% (z = 2.58)</option>
+                        <option value="1.645">90% (z = 1.645)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Margen de error (%):</label>
+                    <input type="number" id="error" placeholder="Ej: 5" value="5">
+                </div>
+                <button onclick="calcularMuestra()">Calcular tamaño muestral</button>
+                <div id="resultadoMuestra" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h4>Calculadora de parámetros básicos</h4>
+                <div class="input-group">
+                    <label>Introduce los datos (separados por comas):</label>
+                    <input type="text" id="datosInput" placeholder="Ej: 120, 150, 200, 180, 220, 190, 160">
+                </div>
+                <button onclick="calcularParámetros()">Calcular parámetros</button>
+                <div id="resultadoParámetros" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h4>Conversor de grados para diagrama de sectores</h4>
+                <div class="input-group">
+                    <label>Valor de la categoria:</label>
+                    <input type="number" id="valorCategoria" placeholder="Ej: 25">
+                </div>
+                <div class="input-group">
+                    <label>Total de todos los valores:</label>
+                    <input type="number" id="valorTotal" placeholder="Ej: 100">
+                </div>
+                <button onclick="calcularGrados()">Calcular grados</button>
+                <div id="resultadoGrados" class="result"></div>
+            </div>
+
+            <a href="../index.html" class="back-link">← Volver al inicio</a>
+        </section>
+    </div>
+
+    <footer>
+        <p><strong>CEPA Guayafanta</strong></p>
+        <p>Kit de Supervivencia - El Desafío del Consumo Real</p>
+        <p>ESPA - Ámbito Científico-Tecnológico - Nivel 2</p>
+    </footer>
+
+    <script>
+        // Tabs functionality
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Calculadora de muestra
+        function calcularMuestra() {
+            const N = parseFloat(document.getElementById('población').value);
+            const z = parseFloat(document.getElementById('confianza').value);
+            const e = parseFloat(document.getElementById('error').value) / 100;
+            const p = 0.5;
+            
+            if (!N || !e) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+            
+            const n0 = (z * z * p * (1-p)) / (e * e);
+            const n = Math.ceil((N * n0) / (N + n0));
+            
+            document.getElementById('resultadoMuestra').innerHTML = `
+                <strong>Resultado:</strong><br>
+                Tamano muestral necesario: <strong>${n}</strong> personas<br>
+                <small>(Para población de ${N}, confianza del ${(z===1.96?95:z===2.58?99:90)}% y error del ${e*100}%)</small>
+            `;
+            document.getElementById('resultadoMuestra').classList.add('show');
+        }
+
+        // Calculadora de parámetros
+        function calcularParámetros() {
+            const input = document.getElementById('datosInput').value;
+            const datos = input.split(',').map(x => parseFloat(x.trim())).filter(x => !isNaN(x));
+            
+            if (datos.length === 0) {
+                alert('Por favor, introduce datos válidos separados por comas');
+                return;
+            }
+            
+            const media = datos.reduce((a,b) => a+b, 0) / datos.length;
+            const ordenados = [...datos].sort((a,b) => a-b);
+            const mediana = datos.length % 2 === 0 
+                ? (ordenados[datos.length/2-1] + ordenados[datos.length/2]) / 2
+                : ordenados[Math.floor(datos.length/2)];
+            
+            const frecuencias = {};
+            datos.forEach(x => frecuencias[x] = (frecuencias[x] || 0) + 1);
+            const modaVal = Object.entries(frecuencias).sort((a,b) => b[1]-a[1])[0];
+            const moda = modaVal[1] > 1 ? modaVal[0] : 'No hay moda';
+            
+            const rango = Math.max(...datos) - Math.min(...datos);
+            const varianza = datos.reduce((sum, x) => sum + Math.pow(x - media, 2), 0) / datos.length;
+            const desvTipica = Math.sqrt(varianza);
+            const cv = (desvTipica / media) * 100;
+            
+            document.getElementById('resultadoParámetros').innerHTML = `
+                <strong>Resultados (${datos.length} datos):</strong><br>
+                <strong>Media (x̄):</strong> ${media.toFixed(2)}<br>
+                <strong>Mediana (Me):</strong> ${mediana.toFixed(2)}<br>
+                <strong>Moda (Mo):</strong> ${moda}<br>
+                <strong>Rango (R):</strong> ${rango.toFixed(2)}<br>
+                <strong>Varianza (s²):</strong> ${varianza.toFixed(2)}<br>
+                <strong>Desv. típica (s):</strong> ${desvTipica.toFixed(2)}<br>
+                <strong>Coef. Variación (CV):</strong> ${cv.toFixed(2)}% 
+                <span style="color: ${cv<15?'#00625A':cv<30?'#F76D00':'#E74C3C'}">(${cv<15?'Muy representativa':cv<30?'Representativa':'Poco representativa'})</span>
+            `;
+            document.getElementById('resultadoParámetros').classList.add('show');
+        }
+
+        // Calculadora de grados
+        function calcularGrados() {
+            const valor = parseFloat(document.getElementById('valorCategoria').value);
+            const total = parseFloat(document.getElementById('valorTotal').value);
+            
+            if (!valor || !total) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+            
+            const grados = (valor / total) * 360;
+            const porcentaje = (valor / total) * 100;
+            
+            document.getElementById('resultadoGrados').innerHTML = `
+                <strong>Resultado:</strong><br>
+                <strong>Grados:</strong> ${grados.toFixed(1)}°<br>
+                <strong>Porcentaje:</strong> ${porcentaje.toFixed(1)}%<br>
+                <small>Para dibujar: usa un transportador para medir ${grados.toFixed(1)}° desde el centro</small>
+            `;
+            document.getElementById('resultadoGrados').classList.add('show');
+        }
+    </script>
+
+
+
+
+    </body></html>
